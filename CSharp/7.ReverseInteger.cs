@@ -29,16 +29,17 @@ namespace LeetCode
 
     public partial class Test
     {
-        [Fact]
-        public void Reverse()
+        [Theory]
+        [InlineData(0, 0)]
+        [InlineData(2147483647, 0)]
+        [InlineData(-2147483648, 0)]
+        [InlineData(1534236469, 0)]
+        [InlineData(230, 32)]
+        [InlineData(777, 777)]
+        [InlineData(9487, 7849)]
+        public void Reverse(int x, int expected)
         {
-            Func<int, int> reverseInteger = new Solution().Reverse;
-
-            Assert.Equal(0, reverseInteger(0));
-            Assert.Equal(0, reverseInteger(2147483647));
-            Assert.Equal(0, reverseInteger(-2147483648));
-            Assert.Equal(0, reverseInteger(1534236469));
-            Assert.Equal(32, reverseInteger(230));
+            Assert.Equal(expected, new Solution().Reverse(x));
         }
     }
 }
