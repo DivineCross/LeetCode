@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 
 using Xunit;
@@ -58,58 +57,31 @@ namespace LeetCode
 
     public partial class Test
     {
-        [Fact]
-        public void MergeTwoLists()
+        [Theory]
+        [InlineData(new int[] { }, new int[] { }, new int[] { })]
+        [InlineData(new int[] { }, new int[] { 1, 2 }, new int[] { 1, 2 })]
+        [InlineData(new int[] { 1, 2 }, new int[] { }, new int[] { 1, 2 })]
+        [InlineData(new int[] { 1, 1 }, new int[] { 2, 2 }, new int[] { 1, 1, 2, 2 })]
+        [InlineData(new int[] { 1, 2 }, new int[] { 3, 4 }, new int[] { 1, 2, 3, 4 })]
+        [InlineData(
+            new int[] { 1, 2, 4 },
+            new int[] { 1, 3, 4 },
+            new int[] { 1, 1, 2, 3, 4, 4 })]
+        [InlineData(
+            new int[] { 1, 1, 3, 5 },
+            new int[] { 1, 1, 2, 4 },
+            new int[] { 1, 1, 1, 1, 2, 3, 4, 5 })]
+        [InlineData(
+            new int[] { 7, 8, 9 },
+            new int[] { 1, 1, 1, 1 },
+            new int[] { 1, 1, 1, 1, 7, 8, 9 })]
+        public void MergeTwoLists(int[] l1, int[] l2, int[] expected)
         {
-            Func<ListNode, ListNode, ListNode> mergeTwoLists = new Solution().MergeTwoLists;
-
-            int[] x;
-            int[] y;
-            int[] a;
-
-            x = new int[] { };
-            y = new int[] { };
-            a = new int[] { };
-            Assert.Equal(a, merge(x, y));
-
-            x = new int[] { };
-            y = new int[] { 1, 2 };
-            a = new int[] { 1, 2 };
-            Assert.Equal(a, merge(x, y));
-
-            x = new int[] { 1, 2 };
-            y = new int[] { };
-            a = new int[] { 1, 2 };
-            Assert.Equal(a, merge(x, y));
-
-            x = new int[] { 1, 1 };
-            y = new int[] { 2, 2 };
-            a = new int[] { 1, 1, 2, 2 };
-            Assert.Equal(a, merge(x, y));
-
-            x = new int[] { 1, 2 };
-            y = new int[] { 3, 4 };
-            a = new int[] { 1, 2, 3, 4 };
-            Assert.Equal(a, merge(x, y));
-
-            x = new int[] { 1, 4 };
-            y = new int[] { 2, 3 };
-            a = new int[] { 1, 2, 3, 4 };
-            Assert.Equal(a, merge(x, y));
-
-            x = new int[] { 1, 1, 3, 5 };
-            y = new int[] { 1, 1, 2, 4 };
-            a = new int[] { 1, 1, 1, 1, 2, 3, 4, 5 };
-            Assert.Equal(a, merge(x, y));
-
-            x = new int[] { 7, 8, 9 };
-            y = new int[] { 1, 1, 1, 1 };
-            a = new int[] { 1, 1, 1, 1, 7, 8, 9 };
-            Assert.Equal(a, merge(x, y));
-
-            int[] merge(int[] l1, int[] l2) =>
-                mergeTwoLists(ListNode.FromCollection(l1), ListNode.FromCollection(l2))
-                    .AsEnumerable().ToArray();
+            Assert.Equal(
+                expected,
+                new Solution()
+                    .MergeTwoLists(ListNode.FromCollection(l1), ListNode.FromCollection(l2))
+                    .AsEnumerable());
         }
     }
 }
