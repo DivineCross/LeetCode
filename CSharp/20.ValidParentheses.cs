@@ -68,7 +68,6 @@ namespace LeetCode
         [InlineData("(]")]
         [InlineData("(()")]
         [InlineData("{}(")]
-        [InlineData("(()")]
         [InlineData("([)]")]
         [InlineData("({)}")]
         [InlineData("[(())")]
