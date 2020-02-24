@@ -30,11 +30,14 @@ namespace LeetCode
     public partial class Test
     {
         [Theory]
+        [InlineData(123, 321)]
+        [InlineData(-123, -321)]
+        [InlineData(120, 21)]
+        [InlineData(-120, -21)]
         [InlineData(0, 0)]
         [InlineData(2147483647, 0)]
         [InlineData(-2147483648, 0)]
         [InlineData(1534236469, 0)]
-        [InlineData(230, 32)]
         [InlineData(777, 777)]
         [InlineData(9487, 7849)]
         public void Reverse(int x, int expected)
