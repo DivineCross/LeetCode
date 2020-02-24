@@ -4,7 +4,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution26
     {
         // https://leetcode.com/problems/remove-duplicates-from-sorted-array
         public int RemoveDuplicates(int[] nums)
@@ -21,7 +21,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test26
     {
         [Theory]
         [InlineData(
@@ -48,7 +48,7 @@ namespace LeetCode
         public void RemoveDuplicates(int[] nums, int[] expected)
         {
             var expectedLength = expected?.Length ?? 0;
-            Assert.Equal(expectedLength, new Solution().RemoveDuplicates(nums));
+            Assert.Equal(expectedLength, new Solution26().RemoveDuplicates(nums));
             Assert.Equal(expected, nums?.Take(expectedLength));
         }
     }

@@ -5,7 +5,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution20
     {
         private static readonly Dictionary<char, char> leftToRight = new Dictionary<char, char> {
             ['('] = ')',
@@ -34,7 +34,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test20
     {
         [Theory]
         [InlineData((string)null)]
@@ -55,7 +55,7 @@ namespace LeetCode
         [InlineData("{([])({})({[()]{}})}")]
         public void IsValidParenthesesTrue(string s)
         {
-            Assert.True(new Solution().IsValid(s));
+            Assert.True(new Solution20().IsValid(s));
         }
 
         [Theory]
@@ -75,7 +75,7 @@ namespace LeetCode
         [InlineData(")}{({))[{{[}")]
         public void IsValidParenthesesFalse(string s)
         {
-            Assert.False(new Solution().IsValid(s));
+            Assert.False(new Solution20().IsValid(s));
         }
     }
 }

@@ -5,7 +5,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution35
     {
         // https://leetcode.com/problems/search-insert-position
         public int SearchInsert(int[] nums, int target)
@@ -48,7 +48,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test35
     {
         [Theory]
         [InlineData(null, 9, 0)]
@@ -88,7 +88,7 @@ namespace LeetCode
         [InlineData(new[] { -5, -3, 0, 2, 4 }, 5, 5)]
         public void SearchInsert(int[] nums, int target, int expected)
         {
-            Assert.Equal(expected, new Solution().SearchInsert(nums, target));
+            Assert.Equal(expected, new Solution35().SearchInsert(nums, target));
         }
     }
 }

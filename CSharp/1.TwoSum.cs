@@ -6,7 +6,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution1
     {
         // https://leetcode.com/problems/two-sum
         public int[] TwoSum(int[] nums, int target)
@@ -26,7 +26,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test1
     {
         [Theory]
         [InlineData(new[] { 2, 7, 11, 15 }, 9, new[] { 0, 1 })]
@@ -35,7 +35,7 @@ namespace LeetCode
         [InlineData(new[] { 1, 2, 3, 6 }, 5, new[] { 1, 2 })]
         public void TwoSum(int[] nums, int target, int[] expectedIndexes)
         {
-            Assert.True(new Solution().TwoSum(nums, target).ToHashSet()
+            Assert.True(new Solution1().TwoSum(nums, target).ToHashSet()
                 .SetEquals(expectedIndexes.ToHashSet()));
         }
     }

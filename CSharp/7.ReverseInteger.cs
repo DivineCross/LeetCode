@@ -4,7 +4,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution7
     {
         // https://leetcode.com/problems/reverse-integer
         public int Reverse(int x)
@@ -27,7 +27,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test7
     {
         [Theory]
         [InlineData(123, 321)]
@@ -42,7 +42,7 @@ namespace LeetCode
         [InlineData(9487, 7849)]
         public void Reverse(int x, int expected)
         {
-            Assert.Equal(expected, new Solution().Reverse(x));
+            Assert.Equal(expected, new Solution7().Reverse(x));
         }
     }
 }

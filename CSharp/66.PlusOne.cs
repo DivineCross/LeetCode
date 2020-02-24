@@ -4,7 +4,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution66
     {
         // https://leetcode.com/problems/plus-one
         public int[] PlusOne(int[] digits)
@@ -28,7 +28,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test66
     {
         [Theory]
         [InlineData(
@@ -66,7 +66,7 @@ namespace LeetCode
             new[] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
         public void PlusOne(int[] digits, int[] expected)
         {
-            Assert.Equal(expected, new Solution().PlusOne(digits));
+            Assert.Equal(expected, new Solution66().PlusOne(digits));
         }
     }
 }

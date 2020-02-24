@@ -6,7 +6,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution38
     {
         private static readonly List<string> countAndSayStrs = new List<string> {
             string.Empty,
@@ -47,7 +47,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test38
     {
         [Theory]
         [InlineData(-99999, "")]
@@ -68,7 +68,7 @@ namespace LeetCode
         [InlineData(13, "1321132132111213122112311311222113111221131221")]
         public void CountAndSay(int n, string expected)
         {
-            Assert.Equal(expected, new Solution().CountAndSay(n));
+            Assert.Equal(expected, new Solution38().CountAndSay(n));
         }
     }
 }

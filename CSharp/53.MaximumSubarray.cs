@@ -5,7 +5,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution53
     {
         // https://leetcode.com/problems/maximum-subarray
         public int MaxSubArray(int[] nums)
@@ -26,7 +26,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test53
     {
         [Theory]
         [InlineData(null, 0)]
@@ -62,7 +62,7 @@ namespace LeetCode
         [InlineData(new[] { 9, 0, -2, -2, -3, -4, 0, 1, -4, 5, -8, 7, -3, 7, -6, -4, -7, -8 }, 11)]
         public void MaxSubArray(int[] nums, int expected)
         {
-            Assert.Equal(expected, new Solution().MaxSubArray(nums));
+            Assert.Equal(expected, new Solution53().MaxSubArray(nums));
         }
     }
 }

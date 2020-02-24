@@ -5,7 +5,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution67
     {
         // https://leetcode.com/problems/add-binary
         public string AddBinary(string a, string b)
@@ -38,7 +38,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test67
     {
         [Theory]
         [InlineData(null, null, "")]
@@ -86,7 +86,7 @@ namespace LeetCode
             "111111011111111111111111111111111111111")]
         public void AddBinary(string a, string b, string expected)
         {
-            Assert.Equal(expected, new Solution().AddBinary(a, b));
+            Assert.Equal(expected, new Solution67().AddBinary(a, b));
         }
     }
 }

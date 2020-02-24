@@ -2,7 +2,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution9
     {
         // https://leetcode.com/problems/palindrome-number
         public bool IsPalindrome(int x)
@@ -21,7 +21,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test9
     {
         [Theory]
         [InlineData(0)]
@@ -33,7 +33,7 @@ namespace LeetCode
         [InlineData(1234554321)]
         public void IsPalindromeTrue(int x)
         {
-            Assert.True(new Solution().IsPalindrome(x));
+            Assert.True(new Solution9().IsPalindrome(x));
         }
 
         [Theory]
@@ -49,7 +49,7 @@ namespace LeetCode
         [InlineData(-2147483648)]
         public void IsPalindromeFalse(int x)
         {
-            Assert.False(new Solution().IsPalindrome(x));
+            Assert.False(new Solution9().IsPalindrome(x));
         }
     }
 }

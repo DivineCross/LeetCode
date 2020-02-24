@@ -2,7 +2,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution14
     {
         // https://leetcode.com/problems/longest-common-prefix
         public string LongestCommonPrefix(string[] strs)
@@ -67,7 +67,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test14
     {
         [Theory]
         [InlineData(null, "")]
@@ -87,7 +87,7 @@ namespace LeetCode
         [InlineData(new string[] { "dog","racecar","car" }, "")]
         public void LongestCommonPrefix(string[] strs, string expected)
         {
-            Assert.Equal(expected, new Solution().LongestCommonPrefix(strs));
+            Assert.Equal(expected, new Solution14().LongestCommonPrefix(strs));
         }
     }
 }

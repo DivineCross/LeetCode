@@ -6,7 +6,7 @@ using LeetCode.DataStructure;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution21
     {
         // https://leetcode.com/problems/merge-two-sorted-lists
         public ListNode MergeTwoLists(ListNode l1, ListNode l2)
@@ -55,7 +55,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test21
     {
         [Theory]
         [InlineData(new int[] { }, new int[] { }, new int[] { })]
@@ -79,7 +79,7 @@ namespace LeetCode
         {
             Assert.Equal(
                 expected,
-                new Solution()
+                new Solution21()
                     .MergeTwoLists(ListNode.FromCollection(l1), ListNode.FromCollection(l2))
                     .AsEnumerable());
         }

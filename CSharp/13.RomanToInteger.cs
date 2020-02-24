@@ -4,7 +4,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution13
     {
         private static readonly Dictionary<char, int> romanSymbolToValue =
             new Dictionary<char, int> {
@@ -37,7 +37,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test13
     {
         [Theory]
         [InlineData("I", 1)]
@@ -73,7 +73,7 @@ namespace LeetCode
         [InlineData("MMMCMXCIX", 3999)]
         public void RomanToInt(string roman, int expected)
         {
-            Assert.Equal(expected, new Solution().RomanToInt(roman));
+            Assert.Equal(expected, new Solution13().RomanToInt(roman));
         }
     }
 }

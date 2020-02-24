@@ -2,7 +2,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution28
     {
         // https://leetcode.com/problems/implement-strstr
         public int StrStr(string haystack, string needle)
@@ -21,7 +21,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test28
     {
         [Theory]
         [InlineData(null, null, -1)]
@@ -52,7 +52,7 @@ namespace LeetCode
         [InlineData("ABCABC", "ABC", 0)]
         public void StrStr(string haystack, string needle, int expected)
         {
-            Assert.Equal(expected, new Solution().StrStr(haystack, needle));
+            Assert.Equal(expected, new Solution28().StrStr(haystack, needle));
             if (expected != -1)
                 Assert.Equal(haystack.Substring(expected, needle.Length), needle);
         }

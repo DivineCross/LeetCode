@@ -4,7 +4,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution27
     {
         // https://leetcode.com/problems/remove-element
         public int RemoveElement(int[] nums, int val)
@@ -21,7 +21,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test27
     {
         [Theory]
         [InlineData(
@@ -58,7 +58,7 @@ namespace LeetCode
             4)]
         public void RemoveElement(int[] nums, int val, int expectedLength)
         {
-            Assert.Equal(expectedLength, new Solution().RemoveElement(nums, val));
+            Assert.Equal(expectedLength, new Solution27().RemoveElement(nums, val));
             Assert.False(nums?.Take(expectedLength).Any(n => n == val) ?? false);
         }
     }

@@ -5,7 +5,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public partial class Solution
+    public class Solution58
     {
         // https://leetcode.com/problems/length-of-last-word
         public int LengthOfLastWord(string s)
@@ -25,7 +25,7 @@ namespace LeetCode
         }
     }
 
-    public partial class Test
+    public class Test58
     {
         [Theory]
         [InlineData(null, 0)]
@@ -45,7 +45,7 @@ namespace LeetCode
         [InlineData("Hello World.", 6)]
         public void LengthOfLastWord(string s, int expected)
         {
-            Assert.Equal(expected, new Solution().LengthOfLastWord(s));
+            Assert.Equal(expected, new Solution58().LengthOfLastWord(s));
         }
     }
 }
