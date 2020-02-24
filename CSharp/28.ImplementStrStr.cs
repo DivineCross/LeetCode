@@ -24,37 +24,37 @@ namespace LeetCode
     public partial class Test
     {
         [Theory]
-        [InlineData(new object[] { null, null, -1 })]
-        [InlineData(new object[] { null, "", -1 })]
-        [InlineData(new object[] { null, "A", -1 })]
-        [InlineData(new object[] { "", null, -1 })]
-        [InlineData(new object[] { "", "", 0 })]
-        [InlineData(new object[] { "", "A", -1 })]
-        [InlineData(new object[] { "A", null, -1 })]
-        [InlineData(new object[] { "A", "", 0 })]
-        [InlineData(new object[] { "A", "A", 0 })]
-        [InlineData(new object[] { "A", "Z", -1 })]
-        [InlineData(new object[] { "A", "AZ", -1 })]
-        [InlineData(new object[] { "AA", "A", 0 })]
-        [InlineData(new object[] { "ABC", "A", 0 })]
-        [InlineData(new object[] { "ABC", "B", 1 })]
-        [InlineData(new object[] { "ABC", "C", 2 })]
-        [InlineData(new object[] { "ABC", "AB", 0 })]
-        [InlineData(new object[] { "ABC", "BC", 1 })]
-        [InlineData(new object[] { "ABC", "AC", -1 })]
-        [InlineData(new object[] { "ABC", "ABC", 0 })]
-        [InlineData(new object[] { "ABC", "ABZ", -1 })]
-        [InlineData(new object[] { "ABC", "ABCD", -1 })]
-        [InlineData(new object[] { "ABCABC", "A", 0 })]
-        [InlineData(new object[] { "ABCABC", "B", 1 })]
-        [InlineData(new object[] { "ABCABC", "AB", 0 })]
-        [InlineData(new object[] { "ABCABC", "BC", 1 })]
-        [InlineData(new object[] { "ABCABC", "ABC", 0 })]
-        public void StrStr(string haystack, string needle, int expectedIndex)
+        [InlineData(null, null, -1)]
+        [InlineData(null, "", -1)]
+        [InlineData(null, "A", -1)]
+        [InlineData("", null, -1)]
+        [InlineData("", "", 0)]
+        [InlineData("", "A", -1)]
+        [InlineData("A", null, -1)]
+        [InlineData("A", "", 0)]
+        [InlineData("A", "A", 0)]
+        [InlineData("A", "Z", -1)]
+        [InlineData("A", "AZ", -1)]
+        [InlineData("AA", "A", 0)]
+        [InlineData("ABC", "A", 0)]
+        [InlineData("ABC", "B", 1)]
+        [InlineData("ABC", "C", 2)]
+        [InlineData("ABC", "AB", 0)]
+        [InlineData("ABC", "BC", 1)]
+        [InlineData("ABC", "AC", -1)]
+        [InlineData("ABC", "ABC", 0)]
+        [InlineData("ABC", "ABZ", -1)]
+        [InlineData("ABC", "ABCD", -1)]
+        [InlineData("ABCABC", "A", 0)]
+        [InlineData("ABCABC", "B", 1)]
+        [InlineData("ABCABC", "AB", 0)]
+        [InlineData("ABCABC", "BC", 1)]
+        [InlineData("ABCABC", "ABC", 0)]
+        public void StrStr(string haystack, string needle, int expected)
         {
-            Assert.Equal(expectedIndex, new Solution().StrStr(haystack, needle));
-            if (expectedIndex != -1)
-                Assert.Equal(haystack.Substring(expectedIndex, needle.Length), needle);
+            Assert.Equal(expected, new Solution().StrStr(haystack, needle));
+            if (expected != -1)
+                Assert.Equal(haystack.Substring(expected, needle.Length), needle);
         }
     }
 }
