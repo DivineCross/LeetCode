@@ -24,32 +24,32 @@ namespace LeetCode
     public partial class Test
     {
         [Theory]
-        [InlineData(new object[] {
+        [InlineData(
             null,
-            null })]
-        [InlineData(new object[] {
+            null)]
+        [InlineData(
             new int[] {},
-            new int[] {} })]
-        [InlineData(new object[] {
+            new int[] {})]
+        [InlineData(
             new[] { 1 },
-            new[] { 1 } })]
-        [InlineData(new object[] {
+            new[] { 1 })]
+        [InlineData(
             new[] { 1, 2 },
-            new[] { 1, 2 } })]
-        [InlineData(new object[] {
+            new[] { 1, 2 })]
+        [InlineData(
             new[] { 1, 1, 2 },
-            new[] { 1, 2 } })]
-        [InlineData(new object[] {
+            new[] { 1, 2 })]
+        [InlineData(
             new[] { 1, 1, 2, 2 },
-            new[] { 1, 2 } })]
-        [InlineData(new object[] {
+            new[] { 1, 2 })]
+        [InlineData(
             new[] { 1, 2, 2, 3, 3, 3 },
-            new[] { 1, 2, 3 } })]
+            new[] { 1, 2, 3 })]
         public void RemoveDuplicates(int[] nums, int[] expected)
         {
             var expectedLength = expected?.Length ?? 0;
             Assert.Equal(expectedLength, new Solution().RemoveDuplicates(nums));
-            Assert.Equal(expected, nums?.Take(expectedLength)?.ToArray());
+            Assert.Equal(expected, nums?.Take(expectedLength));
         }
     }
 }
