@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +8,7 @@ namespace LeetCode
 {
     public partial class Solution
     {
-        private static List<string> countAndSay = new List<string> { string.Empty, "1" };
+        private static readonly List<string> countAndSay = new List<string> { string.Empty, "1" };
 
         // https://leetcode.com/problems/count-and-say
         public string CountAndSay(int n)
@@ -19,7 +18,7 @@ namespace LeetCode
 
             var lastString = countAndSay.Last();
             var sb = new StringBuilder();
-            for (int i = countAndSay.Count; i <= n; ++i)
+            for (var i = countAndSay.Count; i <= n; ++i)
             {
                 sb.Clear();
                 var repeating = lastString[0];

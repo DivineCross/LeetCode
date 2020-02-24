@@ -7,24 +7,25 @@ namespace LeetCode
 {
     public partial class Solution
     {
-        private static Dictionary<char, int> romanSymbolToValue = new Dictionary<char, int> {
-            ['I'] = 1,
-            ['V'] = 5,
-            ['X'] = 10,
-            ['L'] = 50,
-            ['C'] = 100,
-            ['D'] = 500,
-            ['M'] = 1000
-        };
+        private static readonly Dictionary<char, int> romanSymbolToValue =
+            new Dictionary<char, int> {
+                ['I'] = 1,
+                ['V'] = 5,
+                ['X'] = 10,
+                ['L'] = 50,
+                ['C'] = 100,
+                ['D'] = 500,
+                ['M'] = 1000
+            };
 
         // https://leetcode.com/problems/roman-to-integer
         public int RomanToInt(string s)
         {
-            int x = 0;
-            int lastValue = 0;
-            for (int i = s.Length - 1; i >= 0; --i)
+            var x = 0;
+            var lastValue = 0;
+            for (var i = s.Length - 1; i >= 0; --i)
             {
-                int value = romanSymbolToValue[s[i]];
+                var value = romanSymbolToValue[s[i]];
                 if (value >= lastValue)
                     x += value;
                 else

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 using Xunit;
 
@@ -10,12 +9,15 @@ namespace LeetCode
         // https://leetcode.com/problems/reverse-integer
         public int Reverse(int x)
         {
-            int revX = 0;
+            var revX = 0;
             while (x != 0)
             {
-                try {
+                try
+                {
                     revX = checked(revX * 10 + x % 10);
-                } catch (OverflowException) {
+                }
+                catch (OverflowException)
+                {
                     return 0;
                 }
                 x /= 10;

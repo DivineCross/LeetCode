@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 using Xunit;
 
 namespace LeetCode
@@ -13,14 +10,14 @@ namespace LeetCode
             if (x < 0 || (x >= 10 && x % 10 == 0))
                 return false;
 
-            int revX = 0;
+            var revX = 0;
             while (x > revX)
             {
                 revX = revX * 10 + x % 10;
                 x /= 10;
             }
 
-            return (x == revX || x == revX / 10);
+            return x == revX || x == revX / 10;
         }
     }
 

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,7 +16,8 @@ namespace LeetCode
             var leftToRight = new Dictionary<char, char> {
                 ['('] = ')',
                 ['['] = ']',
-                ['{'] = '}' };
+                ['{'] = '}',
+            };
 
             var stack = new Stack<char>();
             foreach (var c in s)

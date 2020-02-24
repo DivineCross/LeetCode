@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using Xunit;
 
@@ -17,7 +15,7 @@ namespace LeetCode
 
             s = s.TrimEnd();
             var count = 0;
-            foreach (char c in s.Reverse())
+            foreach (var c in s.Reverse())
                 if (c == ' ')
                     break;
                 else

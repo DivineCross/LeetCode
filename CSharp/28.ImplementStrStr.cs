@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Xunit;
 
 namespace LeetCode
@@ -15,8 +10,8 @@ namespace LeetCode
             if (haystack == null || needle == null)
                 return -1;
 
-            for (int h = 0; h + needle.Length <= haystack.Length; ++h)
-                for (int n = 0; ; ++n)
+            for (var h = 0; h + needle.Length <= haystack.Length; ++h)
+                for (var n = 0; ; ++n)
                     if (n == needle.Length)
                         return h;
                     else if (haystack[h + n] != needle[n])

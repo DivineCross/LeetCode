@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 using Xunit;
@@ -13,11 +12,11 @@ namespace LeetCode
         // https://leetcode.com/problems/merge-two-sorted-lists
         public ListNode MergeTwoLists(ListNode l1, ListNode l2)
         {
-            ListNode dummyHead = new ListNode(0);
-            ListNode tail = dummyHead;
+            var dummyHead = new ListNode(0);
+            var tail = dummyHead;
             while (l1 != null && l2 != null)
             {
-                ListNode next = null;
+                ListNode next;
                 if (l1.val < l2.val)
                 {
                     next = l1;
@@ -63,25 +62,23 @@ namespace LeetCode
         public void MergeTwoLists()
         {
             Func<ListNode, ListNode, ListNode> mergeTwoLists = new Solution().MergeTwoLists;
-            Func<int[], int[], int[]> merge = (l1, l2) =>
-                mergeTwoLists(ListNode.FromCollection(l1), ListNode.FromCollection(l2)).AsEnumerable().ToArray();
 
-            int[] x = null;
-            int[] y = null;
-            int[] a = null;
+            int[] x;
+            int[] y;
+            int[] a;
 
-            x = new int[] {};
-            y = new int[] {};
-            a = new int[] {};
+            x = new int[] { };
+            y = new int[] { };
+            a = new int[] { };
             Assert.Equal(a, merge(x, y));
 
-            x = new int[] {};
+            x = new int[] { };
             y = new int[] { 1, 2 };
             a = new int[] { 1, 2 };
             Assert.Equal(a, merge(x, y));
 
             x = new int[] { 1, 2 };
-            y = new int[] {};
+            y = new int[] { };
             a = new int[] { 1, 2 };
             Assert.Equal(a, merge(x, y));
 
@@ -109,6 +106,10 @@ namespace LeetCode
             y = new int[] { 1, 1, 1, 1 };
             a = new int[] { 1, 1, 1, 1, 7, 8, 9 };
             Assert.Equal(a, merge(x, y));
+
+            int[] merge(int[] l1, int[] l2) =>
+                mergeTwoLists(ListNode.FromCollection(l1), ListNode.FromCollection(l2))
+                    .AsEnumerable().ToArray();
         }
     }
 }

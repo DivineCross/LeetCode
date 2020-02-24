@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 using Xunit;
@@ -23,12 +21,12 @@ namespace LeetCode
             b = b.PadLeft(length, '0');
 
             var sb = new StringBuilder();
-            bool c = false;
-            for (int i = length - 1; i >= 0; --i)
+            var c = false;
+            for (var i = length - 1; i >= 0; --i)
             {
-                bool x = a[i] == '1';
-                bool y = b[i] == '1';
-                bool s = c ^ x ^ y;
+                var x = a[i] == '1';
+                var y = b[i] == '1';
+                var s = c ^ x ^ y;
                 c = x && y || x && c || y && c;
 
                 sb.Insert(0, s ? '1' : '0');

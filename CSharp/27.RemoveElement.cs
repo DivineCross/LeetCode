@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using Xunit;
 
@@ -15,7 +12,7 @@ namespace LeetCode
             if (nums?.Any() != true)
                 return 0;
 
-            int resultLength = 0;
+            var resultLength = 0;
             foreach (var num in nums)
                 if (num != val)
                     nums[resultLength++] = num;
@@ -36,27 +33,27 @@ namespace LeetCode
             999,
             0 })]
         [InlineData(new object[] {
-            new [] { 1 },
+            new[] { 1 },
             999,
             1 })]
         [InlineData(new object[] {
-            new [] { 1, 2 },
+            new[] { 1, 2 },
             999,
             2 })]
         [InlineData(new object[] {
-            new [] { 1 },
+            new[] { 1 },
             1,
             0 })]
         [InlineData(new object[] {
-            new [] { 1, 2 },
+            new[] { 1, 2 },
             1,
             1 })]
         [InlineData(new object[] {
-            new [] { 1, 1, 2 },
+            new[] { 1, 1, 2 },
             1,
             1 })]
         [InlineData(new object[] {
-            new [] { 1, 2, 2, 3, 3, 3 },
+            new[] { 1, 2, 2, 3, 3, 3 },
             2,
             4 })]
         public void RemoveElement(int[] nums, int val, int expectedLength)
