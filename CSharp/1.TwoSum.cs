@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Xunit;
 
@@ -10,29 +11,32 @@ namespace LeetCode
         // https://leetcode.com/problems/two-sum
         public int[] TwoSum(int[] nums, int target)
         {
-            var dict = new Dictionary<int, int>();
+            var map = new Dictionary<int, int>();
             for (var i = 0; i < nums.Length; ++i)
             {
                 var num = nums[i];
                 var diff = target - num;
-                if (dict.ContainsKey(num))
-                    return new[] { dict[num], i };
+                if (map.ContainsKey(num))
+                    return new[] { map[num], i };
 
-                dict[diff] = i;
+                map[diff] = i;
             }
 
-            return new[] { -1, -1 };
+            throw new InvalidOperationException();
         }
     }
 
     public partial class Test
     {
-        [Fact]
-        public void TwoSum()
+        [Theory]
+        [InlineData(new object[] { new[] { 2, 7, 11, 15 }, 9, new[] { 0, 1 } })]
+        [InlineData(new object[] { new[] { 50, 50 }, 100, new[] { 0, 1 } })]
+        [InlineData(new object[] { new[] { 1, 50, 50, 25 }, 100, new[] { 1, 2 } })]
+        [InlineData(new object[] { new[] { 1, 2, 3, 6 }, 5, new[] { 1, 2 } })]
+        public void TwoSum(int[] nums, int target, int[] expectedIndexes)
         {
-            Func<int[], int, int[]> twoSum = new Solution().TwoSum;
-
-            Assert.Equal(new[] { 1, 2 }, twoSum(new[] { 1, 2, 3, 6 }, 5));
+            Assert.True(new Solution().TwoSum(nums, target).ToHashSet()
+                .SetEquals(expectedIndexes.ToHashSet()));
         }
     }
 }
