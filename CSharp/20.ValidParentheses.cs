@@ -7,17 +7,17 @@ namespace LeetCode
 {
     public partial class Solution
     {
+        private static readonly Dictionary<char, char> leftToRight = new Dictionary<char, char> {
+            ['('] = ')',
+            ['['] = ']',
+            ['{'] = '}',
+        };
+
         // https://leetcode.com/problems/valid-parentheses
-        public bool IsValidParentheses(string s)
+        public bool IsValid(string s)
         {
             if (string.IsNullOrEmpty(s))
                 return true;
-
-            var leftToRight = new Dictionary<char, char> {
-                ['('] = ')',
-                ['['] = ']',
-                ['{'] = '}',
-            };
 
             var stack = new Stack<char>();
             foreach (var c in s)
@@ -55,7 +55,7 @@ namespace LeetCode
         [InlineData("{([])({})({[()]{}})}")]
         public void IsValidParenthesesTrue(string s)
         {
-            Assert.True(new Solution().IsValidParentheses(s));
+            Assert.True(new Solution().IsValid(s));
         }
 
         [Theory]
@@ -75,7 +75,7 @@ namespace LeetCode
         [InlineData(")}{({))[{{[}")]
         public void IsValidParenthesesFalse(string s)
         {
-            Assert.False(new Solution().IsValidParentheses(s));
+            Assert.False(new Solution().IsValid(s));
         }
     }
 }
