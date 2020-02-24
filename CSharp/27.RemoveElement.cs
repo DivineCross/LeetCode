@@ -24,42 +24,42 @@ namespace LeetCode
     public partial class Test
     {
         [Theory]
-        [InlineData(new object[] {
+        [InlineData(
             null,
             999,
-            0 })]
-        [InlineData(new object[] {
+            0)]
+        [InlineData(
             new int[] {},
             999,
-            0 })]
-        [InlineData(new object[] {
+            0)]
+        [InlineData(
             new[] { 1 },
             999,
-            1 })]
-        [InlineData(new object[] {
+            1)]
+        [InlineData(
             new[] { 1, 2 },
             999,
-            2 })]
-        [InlineData(new object[] {
+            2)]
+        [InlineData(
             new[] { 1 },
             1,
-            0 })]
-        [InlineData(new object[] {
+            0)]
+        [InlineData(
             new[] { 1, 2 },
             1,
-            1 })]
-        [InlineData(new object[] {
+            1)]
+        [InlineData(
             new[] { 1, 1, 2 },
             1,
-            1 })]
-        [InlineData(new object[] {
+            1)]
+        [InlineData(
             new[] { 1, 2, 2, 3, 3, 3 },
             2,
-            4 })]
+            4)]
         public void RemoveElement(int[] nums, int val, int expectedLength)
         {
             Assert.Equal(expectedLength, new Solution().RemoveElement(nums, val));
-            Assert.False(nums?.Take(expectedLength)?.Where(n => n == val)?.Any() ?? false);
+            Assert.False(nums?.Take(expectedLength).Any(n => n == val) ?? false);
         }
     }
 }
