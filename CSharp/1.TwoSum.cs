@@ -29,10 +29,10 @@ namespace LeetCode
     public partial class Test
     {
         [Theory]
-        [InlineData(new object[] { new[] { 2, 7, 11, 15 }, 9, new[] { 0, 1 } })]
-        [InlineData(new object[] { new[] { 50, 50 }, 100, new[] { 0, 1 } })]
-        [InlineData(new object[] { new[] { 1, 50, 50, 25 }, 100, new[] { 1, 2 } })]
-        [InlineData(new object[] { new[] { 1, 2, 3, 6 }, 5, new[] { 1, 2 } })]
+        [InlineData(new[] { 2, 7, 11, 15 }, 9, new[] { 0, 1 })]
+        [InlineData(new[] { 50, 50 }, 100, new[] { 0, 1 })]
+        [InlineData(new[] { 1, 50, 50, 25 }, 100, new[] { 1, 2 })]
+        [InlineData(new[] { 1, 2, 3, 6 }, 5, new[] { 1, 2 })]
         public void TwoSum(int[] nums, int target, int[] expectedIndexes)
         {
             Assert.True(new Solution().TwoSum(nums, target).ToHashSet()
