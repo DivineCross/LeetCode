@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 using Xunit;
@@ -15,7 +14,7 @@ namespace LeetCode
                 ['L'] = 50,
                 ['C'] = 100,
                 ['D'] = 500,
-                ['M'] = 1000
+                ['M'] = 1000,
             };
 
         // https://leetcode.com/problems/roman-to-integer
@@ -40,39 +39,41 @@ namespace LeetCode
 
     public partial class Test
     {
-        [Fact]
-        public void RomanToInt()
+        [Theory]
+        [InlineData("I", 1)]
+        [InlineData("III", 3)]
+        [InlineData("IV", 4)]
+        [InlineData("V", 5)]
+        [InlineData("VIII", 8)]
+        [InlineData("IX", 9)]
+        [InlineData("X", 10)]
+        [InlineData("XI", 11)]
+        [InlineData("XIV", 14)]
+        [InlineData("XIX", 19)]
+        [InlineData("XX", 20)]
+        [InlineData("XXIX", 29)]
+        [InlineData("XL", 40)]
+        [InlineData("XLIX", 49)]
+        [InlineData("LVIII", 58)]
+        [InlineData("LXX", 70)]
+        [InlineData("XC", 90)]
+        [InlineData("XCIX", 99)]
+        [InlineData("C", 100)]
+        [InlineData("CL", 150)]
+        [InlineData("CXC", 190)]
+        [InlineData("CC", 200)]
+        [InlineData("CD", 400)]
+        [InlineData("CDXC", 490)]
+        [InlineData("D", 500)]
+        [InlineData("DCCC", 800)]
+        [InlineData("CM", 900)]
+        [InlineData("M", 1000)]
+        [InlineData("MDCCCLXXXVIII", 1888)]
+        [InlineData("MCMXCIV", 1994)]
+        [InlineData("MMMCMXCIX", 3999)]
+        public void RomanToInt(string roman, int expected)
         {
-            Func<string, int> romanToInt = new Solution().RomanToInt;
-
-            Assert.Equal(1, romanToInt("I"));
-            Assert.Equal(4, romanToInt("IV"));
-            Assert.Equal(5, romanToInt("V"));
-            Assert.Equal(8, romanToInt("VIII"));
-            Assert.Equal(9, romanToInt("IX"));
-            Assert.Equal(10, romanToInt("X"));
-            Assert.Equal(11, romanToInt("XI"));
-            Assert.Equal(14, romanToInt("XIV"));
-            Assert.Equal(19, romanToInt("XIX"));
-            Assert.Equal(20, romanToInt("XX"));
-            Assert.Equal(29, romanToInt("XXIX"));
-            Assert.Equal(40, romanToInt("XL"));
-            Assert.Equal(49, romanToInt("XLIX"));
-            Assert.Equal(70, romanToInt("LXX"));
-            Assert.Equal(90, romanToInt("XC"));
-            Assert.Equal(99, romanToInt("XCIX"));
-            Assert.Equal(100, romanToInt("C"));
-            Assert.Equal(150, romanToInt("CL"));
-            Assert.Equal(190, romanToInt("CXC"));
-            Assert.Equal(200, romanToInt("CC"));
-            Assert.Equal(400, romanToInt("CD"));
-            Assert.Equal(490, romanToInt("CDXC"));
-            Assert.Equal(500, romanToInt("D"));
-            Assert.Equal(800, romanToInt("DCCC"));
-            Assert.Equal(900, romanToInt("CM"));
-            Assert.Equal(1000, romanToInt("M"));
-            Assert.Equal(1888, romanToInt("MDCCCLXXXVIII"));
-            Assert.Equal(3999, romanToInt("MMMCMXCIX"));
+            Assert.Equal(expected, new Solution().RomanToInt(roman));
         }
     }
 }
