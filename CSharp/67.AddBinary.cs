@@ -41,49 +41,49 @@ namespace LeetCode
     public partial class Test
     {
         [Theory]
-        [InlineData(new object[] { null, null, "" })]
-        [InlineData(new object[] { null, "", "" })]
-        [InlineData(new object[] { "", null, "" })]
-        [InlineData(new object[] { "", "", "" })]
-        [InlineData(new object[] { "", "0", "0" })]
-        [InlineData(new object[] { "0", "", "0" })]
-        [InlineData(new object[] { "0", "0", "0" })]
-        [InlineData(new object[] {
+        [InlineData(null, null, "")]
+        [InlineData(null, "", "")]
+        [InlineData("", null, "")]
+        [InlineData("", "", "")]
+        [InlineData("", "0", "0")]
+        [InlineData("0", "", "0")]
+        [InlineData("0", "0", "0")]
+        [InlineData(
             "0",
             "1",
-            "1" })]
-        [InlineData(new object[] {
+            "1")]
+        [InlineData(
             "01",
             "01",
-            "10" })]
-        [InlineData(new object[] {
+            "10")]
+        [InlineData(
             "10",
             "01",
-            "11" })]
-        [InlineData(new object[] {
+            "11")]
+        [InlineData(
             "110",
             "001",
-            "111" })]
-        [InlineData(new object[] {
+            "111")]
+        [InlineData(
             "000000100",
             "011111111",
-            "100000011" })]
-        [InlineData(new object[] {
+            "100000011")]
+        [InlineData(
             "010000100",
             "011111111",
-            "110000011" })]
-        [InlineData(new object[] {
+            "110000011")]
+        [InlineData(
             "01111111111111111111111111111111",
             "01111111111111111111111111111111",
-            "11111111111111111111111111111110" })]
-        [InlineData(new object[] {
+            "11111111111111111111111111111110")]
+        [InlineData(
             "11111100000000000000000000000000000000",
             "00000011111111111111111111111111111111",
-            "11111111111111111111111111111111111111" })]
-        [InlineData(new object[] {
+            "11111111111111111111111111111111111111")]
+        [InlineData(
             "011111100000000000000000000000000000000",
             "011111111111111111111111111111111111111",
-            "111111011111111111111111111111111111111" })]
+            "111111011111111111111111111111111111111")]
         public void AddBinary(string a, string b, string expected)
         {
             Assert.Equal(expected, new Solution().AddBinary(a, b));
