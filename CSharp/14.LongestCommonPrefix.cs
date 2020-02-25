@@ -28,11 +28,11 @@ namespace LeetCode
             var firstStr = strs[0] ?? string.Empty;
             var prefixLength = firstStr.Length;
             for (var i = 1; i < strs.Length && prefixLength > 0; ++i)
-                updatePrefixLength(strs[i]);
+                UpdatePrefixLength(strs[i]);
 
             return firstStr.Substring(0, prefixLength);
 
-            void updatePrefixLength(string theStr)
+            void UpdatePrefixLength(string theStr)
             {
                 for (var i = 0; i < prefixLength; ++i)
                     if (!(i < theStr?.Length) || firstStr[i] != theStr[i])
@@ -47,12 +47,12 @@ namespace LeetCode
 
             var firstStr = strs[0] ?? string.Empty;
             int prefixLength;
-            for (prefixLength = 0; hasCommonChar(prefixLength); ++prefixLength)
+            for (prefixLength = 0; HasCommonChar(prefixLength); ++prefixLength)
                 continue;
 
             return firstStr.Substring(0, prefixLength);
 
-            bool hasCommonChar(int index)
+            bool HasCommonChar(int index)
             {
                 if (!(index < firstStr.Length))
                     return false;

@@ -58,23 +58,38 @@ namespace LeetCode
     public class Test21
     {
         [Theory]
-        [InlineData(new int[] { }, new int[] { }, new int[] { })]
-        [InlineData(new int[] { }, new int[] { 1, 2 }, new int[] { 1, 2 })]
-        [InlineData(new int[] { 1, 2 }, new int[] { }, new int[] { 1, 2 })]
-        [InlineData(new int[] { 1, 1 }, new int[] { 2, 2 }, new int[] { 1, 1, 2, 2 })]
-        [InlineData(new int[] { 1, 2 }, new int[] { 3, 4 }, new int[] { 1, 2, 3, 4 })]
         [InlineData(
-            new int[] { 1, 2, 4 },
-            new int[] { 1, 3, 4 },
-            new int[] { 1, 1, 2, 3, 4, 4 })]
+            new int[] { },
+            new int[] { },
+            new int[] { })]
         [InlineData(
-            new int[] { 1, 1, 3, 5 },
-            new int[] { 1, 1, 2, 4 },
-            new int[] { 1, 1, 1, 1, 2, 3, 4, 5 })]
+            new int[] { },
+            new int[] { 1, 2 },
+            new int[] { 1, 2 })]
         [InlineData(
-            new int[] { 7, 8, 9 },
-            new int[] { 1, 1, 1, 1 },
-            new int[] { 1, 1, 1, 1, 7, 8, 9 })]
+            new int[] { 1, 2 },
+            new int[] { },
+            new int[] { 1, 2 })]
+        [InlineData(
+            new[] { 1, 1 },
+            new[] { 2, 2 },
+            new[] { 1, 1, 2, 2 })]
+        [InlineData(
+            new[] { 1, 2 },
+            new[] { 3, 4 },
+            new[] { 1, 2, 3, 4 })]
+        [InlineData(
+            new[] { 1, 2, 4 },
+            new[] { 1, 3, 4 },
+            new[] { 1, 1, 2, 3, 4, 4 })]
+        [InlineData(
+            new[] { 1, 1, 3, 5 },
+            new[] { 1, 1, 2, 4 },
+            new[] { 1, 1, 1, 1, 2, 3, 4, 5 })]
+        [InlineData(
+            new[] { 7, 8, 9 },
+            new[] { 1, 1, 1, 1 },
+            new[] { 1, 1, 1, 1, 7, 8, 9 })]
         public void MergeTwoLists(int[] l1, int[] l2, int[] expected)
         {
             Assert.Equal(

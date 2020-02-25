@@ -36,13 +36,13 @@ namespace LeetCode
             new int[] { },
             new int[] { 2 })]
         [InlineData(
-            new int[] { 1, 2 },
-            new int[] { 4, 5 },
-            new int[] { 1, 2, 4, 5 })]
+            new[] { 1, 2 },
+            new[] { 4, 5 },
+            new[] { 1, 2, 4, 5 })]
         [InlineData(
-            new int[] { 1, 2, 3 },
-            new int[] { 2, 5, 6 },
-            new int[] { 1, 2, 2, 3, 5, 6 })]
+            new[] { 1, 2, 3 },
+            new[] { 2, 5, 6 },
+            new[] { 1, 2, 2, 3, 5, 6 })]
         public void Merge(int[] nums1, int[] nums2, int[] expected)
         {
             var inputs = nums1.Concat(Enumerable.Repeat(0, nums2.Length)).ToArray();
