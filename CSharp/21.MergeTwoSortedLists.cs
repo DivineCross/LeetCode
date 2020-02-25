@@ -80,8 +80,8 @@ namespace LeetCode
             Assert.Equal(
                 expected,
                 new Solution21()
-                    .MergeTwoLists(ListNode.FromCollection(l1), ListNode.FromCollection(l2))
-                    .AsEnumerable());
+                    .MergeTwoLists(ListNode.From(l1), ListNode.From(l2))
+                    .ToArray());
         }
     }
 }

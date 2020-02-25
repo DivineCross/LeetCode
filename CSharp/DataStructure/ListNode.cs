@@ -10,7 +10,7 @@ namespace LeetCode.DataStructure
         public ListNode next;
         public ListNode(int x) { val = x; }
 
-        public static ListNode FromCollection(IEnumerable<int> collection)
+        public static ListNode From(IEnumerable<int> collection)
         {
             if (collection == null)
                 throw new ArgumentException($"'{nameof(collection)}' can not be null.");
@@ -32,6 +32,11 @@ namespace LeetCode.DataStructure
 
     public static class ListNodeExtensions
     {
+        public static int[] ToArray(this ListNode head)
+        {
+            return head.AsEnumerable().ToArray();
+        }
+
         public static IEnumerable<int> AsEnumerable(this ListNode head)
         {
             for (var node = head; node != null; node = node.next)

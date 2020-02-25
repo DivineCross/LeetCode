@@ -58,7 +58,7 @@ namespace LeetCode
         {
             Assert.Equal(
                 expected,
-                new Solution83().DeleteDuplicates(ListNode.FromCollection(nums)).AsEnumerable());
+                new Solution83().DeleteDuplicates(ListNode.From(nums)).ToArray());
         }
     }
 }
