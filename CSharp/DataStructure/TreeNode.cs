@@ -58,16 +58,16 @@ namespace LeetCode.DataStructure
 
             var vals = new List<int?>();
             var queue = new Queue<TreeNode>();
-            root.AddTo(queue);
+            queue.Enqueue(root);
 
-            while (queue.Any())
+            while (queue.Any(n => n != null))
             {
                 var node = queue.Dequeue();
-                vals.Add(node?.val);
 
-                node.left.AddTo(queue);
-                node.right.AddTo(queue);
-           }
+                vals.Add(node?.val);
+                queue.Enqueue(node?.left);
+                queue.Enqueue(node?.right);
+            }
 
             return vals.ToArray();
         }
