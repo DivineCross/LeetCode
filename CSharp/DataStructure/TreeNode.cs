@@ -16,20 +16,20 @@ namespace LeetCode.DataStructure
             if (collection == null)
                 throw new ArgumentException($"'{nameof(collection)}' can not be null.");
 
-            var headVal = collection.FirstOrDefault();
-            if (headVal == null)
+            var rootVal = collection.FirstOrDefault();
+            if (rootVal == null)
                 return null;
 
-            var head = new TreeNode(headVal.Value);
+            var root = new TreeNode(rootVal.Value);
             var queue = new Queue<TreeNode>();
-            head.AddTo(queue);
+            root.AddTo(queue);
 
             var it = collection.GetEnumerator();
             var hasNode = it.MoveNext();
             while (queue.Any() && hasNode)
                 AddChildren(queue.Dequeue(), GetNext(it, out _), GetNext(it, out hasNode));
 
-            return head;
+            return root;
 
             void AddChildren(TreeNode parent, int? l, int? r)
             {
@@ -51,14 +51,14 @@ namespace LeetCode.DataStructure
 
     public static class TreeNodeExtensions
     {
-        public static int?[] ToArray(this TreeNode head)
+        public static int?[] ToArray(this TreeNode root)
         {
-            if (head?.val == null)
+            if (root?.val == null)
                 return new int?[0];
 
             var vals = new List<int?>();
             var queue = new Queue<TreeNode>();
-            head.AddTo(queue);
+            root.AddTo(queue);
 
             while (queue.Any())
             {
